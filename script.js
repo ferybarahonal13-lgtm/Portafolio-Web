@@ -1,44 +1,98 @@
 var formulario = document.getElementById('formulario-contacto');
 
+function validarNombre() {
+    var campo = document.getElementById('nombre');
+    var valor = campo.value.trim();
+    var errorSpan = document.getElementById('error-nombre');
+    var patron = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+
+    if (valor === '') {
+        errorSpan.textContent = 'Ingresa tu nombre';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    if (!patron.test(valor)) {
+        errorSpan.textContent = 'El nombre no debe contener números';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    errorSpan.textContent = '';
+    campo.classList.remove('invalido');
+    return true;
+}
+
+function validarCampo(id, mensaje) {
+    var campo = document.getElementById(id);
+    var valor = campo.value.trim();
+    var errorSpan = document.getElementById('error-' + id);
+
+    if (valor === '') {
+        errorSpan.textContent = mensaje;
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    errorSpan.textContent = '';
+    campo.classList.remove('invalido');
+    return true;
+}
+
+function validarCorreo() {
+    var campo = document.getElementById('correo');
+    var valor = campo.value.trim();
+    var errorSpan = document.getElementById('error-correo');
+    var patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (valor === '') {
+        errorSpan.textContent = 'Ingresa tu correo';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    if (!patron.test(valor)) {
+        errorSpan.textContent = 'Ingresa un correo válido, ej: nombre@dominio.com';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    errorSpan.textContent = '';
+    campo.classList.remove('invalido');
+    return true;
+}
+
+function validarMensaje() {
+    var campo = document.getElementById('mensaje');
+    var valor = campo.value.trim();
+    var errorSpan = document.getElementById('error-mensaje');
+
+    if (valor === '') {
+        errorSpan.textContent = 'Escribe un mensaje';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    if (valor.length < 10) {
+        errorSpan.textContent = 'Tu mensaje debe tener al menos 10 caracteres';
+        campo.classList.add('invalido');
+        return false;
+    }
+
+    errorSpan.textContent = '';
+    campo.classList.remove('invalido');
+    return true;
+}
+
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var nombre = document.getElementById('nombre').value.trim();
-    var correo = document.getElementById('correo').value.trim();
-    var asunto = document.getElementById('asunto').value.trim();
-    var mensaje = document.getElementById('mensaje').value.trim();
+    var nombreValido = validarNombre();
+    var correoValido = validarCorreo();
+    var asuntoValido = validarCampo('asunto', 'Ingresa un asunto');
+    var mensajeValido = validarMensaje();
 
-    var valido = true;
-
-    if (nombre === '') {
-        document.getElementById('error-nombre').textContent = 'Ingresa tu nombre';
-        valido = false;
-    } else {
-        document.getElementById('error-nombre').textContent = '';
-    }
-
-    if (correo === '' || correo.indexOf('@') === -1) {
-        document.getElementById('error-correo').textContent = 'Ingresa un correo válido';
-        valido = false;
-    } else {
-        document.getElementById('error-correo').textContent = '';
-    }
-
-    if (asunto === '') {
-        document.getElementById('error-asunto').textContent = 'Ingresa un asunto';
-        valido = false;
-    } else {
-        document.getElementById('error-asunto').textContent = '';
-    }
-
-    if (mensaje === '') {
-        document.getElementById('error-mensaje').textContent = 'Escribe un mensaje';
-        valido = false;
-    } else {
-        document.getElementById('error-mensaje').textContent = '';
-    }
-
-    if (valido) {
+    if (nombreValido && correoValido && asuntoValido && mensajeValido) {
         alert('Tu mensaje se envió correctamente');
         formulario.reset();
     }
