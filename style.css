@@ -251,6 +251,10 @@ header nav ul li a {
     resize: vertical;
 }
 
+.invalido {
+    border-color: #ff5c5c;
+}
+
 .error {
     color: #ff5c5c;
     font-size: 0.85rem;
