@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #0A0A1A;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #12132B;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.logo {
+    color: #00E5FF;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+header input#menu {
+    display: none;
+}
+
+.hamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburguesa .linea {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+header nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #12132B;
+}
+
+header input#menu:checked ~ nav {
+    display: block;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-top: 1px solid #1e1f3d;
+}
+
+@media (min-width: 720px) {
+    .hamburguesa {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    header nav ul li a {
+        border-top: none;
+        padding: 0.5rem 0;
+    }
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00E5FF;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    margin: 0.5rem 0;
+    font-size: 1.6rem;
+}
+
+.hero h2 {
+    color: #C77DBB;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin: 0.5rem 0;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 1rem auto;
+    color: #cccccc;
+}
+
+.botones-hero {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn.primario {
+    background-color: #00E5FF;
+    color: #0A0A1A;
+}
+
+.btn.secundario {
+    background-color: transparent;
+    color: #C77DBB;
+    border: 1px solid #C77DBB;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00E5FF;
+}
+
+.bio {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: #cccccc;
+    text-align: center;
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tec {
+    background-color: #12132B;
+    border: 1px solid #C77DBB;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+}
+
+.lista-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.proyecto {
+    background-color: #12132B;
+    border: 1px solid #1e1f3d;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.proyecto h3 {
+    color: #00E5FF;
+    margin-top: 0;
+}
+
+.tec-usadas {
+    color: #C77DBB;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 720px) {
+    .proyecto {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1025px) {
+    .proyecto {
+        width: calc(33.33% - 1rem);
+    }
+}
+
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#formulario-contacto label {
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+#formulario-contacto input,
+#formulario-contacto textarea {
+    padding: 0.7rem;
+    background-color: #12132B;
+    border: 1px solid #1e1f3d;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+#formulario-contacto textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.error {
+    color: #ff5c5c;
+    font-size: 0.85rem;
+    min-height: 1.1rem;
+}
+
+#formulario-contacto button {
+    margin-top: 1.5rem;
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+}
+
+.contacto-directo {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+footer {
+    background-color: #12132B;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+footer a {
+    color: #00E5FF;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}

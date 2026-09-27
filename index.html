@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Barahona - Portafolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">BL</div>
+        <input type="checkbox" id="menu">
+        <label class="hamburguesa" for="menu">
+            <div class="linea"></div>
+            <div class="linea"></div>
+            <div class="linea"></div>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <img src="perfil.jpeg" alt="Foto de perfil" class="foto-perfil">
+            <h1>Fernando Yareth Barahona Lagos</h1>
+            <h2>Estudiante de Ingeniería en Ciencias de la Computación - UNICAH</h2>
+            <p>Construyendo interfaces funcionales y aplicando buenas prácticas de desarrollo.</p>
+            <div class="botones-hero">
+                <a href="#proyectos" class="btn primario">Ver Proyectos</a>
+                <a href="#contacto" class="btn secundario">Contactar</a>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="contenido">
+            <h2 class="titulo-seccion">Sobre mí</h2>
+            <p class="bio">
+                Soy estudiante de Ingeniería en Ciencias de la Computación con experiencia en desarrollo de software,
+                diseño web interactivo, bases de datos SQL y lógica de programación en C++ y JavaScript. Me apasiona
+                construir interfaces atractivas, funcionales y optimizadas, aplicando buenas prácticas de maquetación
+                responsiva y control de versiones con Git.
+            </p>
+            <div class="tecnologias">
+                <div class="tec">HTML5</div>
+                <div class="tec">CSS3</div>
+                <div class="tec">JavaScript</div>
+                <div class="tec">C++</div>
+                <div class="tec">SQL Server</div>
+                <div class="tec">Git / GitHub</div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="contenido">
+            <h2 class="titulo-seccion">Proyectos</h2>
+            <div class="lista-proyectos">
+                <div class="proyecto">
+                    <h3>Carrusel Web del Sistema Solar</h3>
+                    <p>Carrusel interactivo con información de los planetas del sistema solar, hecho con HTML, CSS y JavaScript.</p>
+                    <p class="tec-usadas">HTML5, CSS3, JavaScript</p>
+                    <a href="https://github.com/ferybarahonal13-lgtm" target="_blank" class="btn primario">Ver Repositorio</a>
+                </div>
+                <div class="proyecto">
+                    <h3>Sistema de Gestión de Ventas</h3>
+                    <p>Sistema de consola en C++ para el registro y control de ventas de un pequeño negocio.</p>
+                    <p class="tec-usadas">C++, SQL Server</p>
+                    <a href="https://github.com/ferybarahonal13-lgtm" target="_blank" class="btn primario">Ver Repositorio</a>
+                </div>
+                <div class="proyecto">
+                    <h3>Portafolio Web Responsivo</h3>
+                    <p>Este mismo portafolio, maquetado con Flexbox y adaptado para móviles, tablets y escritorio.</p>
+                    <p class="tec-usadas">HTML5, CSS3, JavaScript</p>
+                    <a href="https://github.com/ferybarahonal13-lgtm/Portafolio-Web" target="_blank" class="btn primario">Ver Repositorio</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contenido">
+            <h2 class="titulo-seccion">Contacto</h2>
+            <form id="formulario-contacto" novalidate>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+                <span class="error" id="error-nombre"></span>
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" placeholder="Tu correo">
+                <span class="error" id="error-correo"></span>
+
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" placeholder="Asunto">
+                <span class="error" id="error-asunto"></span>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+                <span class="error" id="error-mensaje"></span>
+
+                <button type="submit" class="btn primario">Enviar</button>
+            </form>
+            <div class="contacto-directo">
+                <a href="mailto:fery_barahonal13@unicah.edu" class="btn secundario">Escribir Correo</a>
+                <a href="https://github.com/ferybarahonal13-lgtm" target="_blank" class="btn secundario">Mi GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fernando Yareth Barahona Lagos</p>
+        <p><a href="https://github.com/ferybarahonal13-lgtm/Portafolio-Web" target="_blank">Repositorio del Proyecto</a></p>
+        <p><a href="https://ferybarahonal13-lgtm.github.io/Portafolio-Web/" target="_blank">Ver Sitio Publicado</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
