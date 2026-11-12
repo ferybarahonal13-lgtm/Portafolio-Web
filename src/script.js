@@ -1,10 +1,10 @@
-var formulario = document.getElementById('formulario-contacto');
+const formulario = document.getElementById('formulario-contacto');
 
 function validarNombre() {
-    var campo = document.getElementById('nombre');
-    var valor = campo.value.trim();
-    var errorSpan = document.getElementById('error-nombre');
-    var patron = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+    const campo = document.getElementById('nombre');
+    const valor = campo.value.trim();
+    const errorSpan = document.getElementById('error-nombre');
+    const patron = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
     if (valor === '') {
         errorSpan.textContent = 'Ingresa tu nombre';
@@ -24,9 +24,9 @@ function validarNombre() {
 }
 
 function validarCampo(id, mensaje) {
-    var campo = document.getElementById(id);
-    var valor = campo.value.trim();
-    var errorSpan = document.getElementById('error-' + id);
+    const campo = document.getElementById(id);
+    const valor = campo.value.trim();
+    const errorSpan = document.getElementById('error-' + id);
 
     if (valor === '') {
         errorSpan.textContent = mensaje;
@@ -40,10 +40,10 @@ function validarCampo(id, mensaje) {
 }
 
 function validarCorreo() {
-    var campo = document.getElementById('correo');
-    var valor = campo.value.trim();
-    var errorSpan = document.getElementById('error-correo');
-    var patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const campo = document.getElementById('correo');
+    const valor = campo.value.trim();
+    const errorSpan = document.getElementById('error-correo');
+    const patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (valor === '') {
         errorSpan.textContent = 'Ingresa tu correo';
@@ -63,9 +63,9 @@ function validarCorreo() {
 }
 
 function validarMensaje() {
-    var campo = document.getElementById('mensaje');
-    var valor = campo.value.trim();
-    var errorSpan = document.getElementById('error-mensaje');
+    const campo = document.getElementById('mensaje');
+    const valor = campo.value.trim();
+    const errorSpan = document.getElementById('error-mensaje');
 
     if (valor === '') {
         errorSpan.textContent = 'Escribe un mensaje';
@@ -87,10 +87,10 @@ function validarMensaje() {
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var nombreValido = validarNombre();
-    var correoValido = validarCorreo();
-    var asuntoValido = validarCampo('asunto', 'Ingresa un asunto');
-    var mensajeValido = validarMensaje();
+    const nombreValido = validarNombre();
+    const correoValido = validarCorreo();
+    const asuntoValido = validarCampo('asunto', 'Ingresa un asunto');
+    const mensajeValido = validarMensaje();
 
     if (nombreValido && correoValido && asuntoValido && mensajeValido) {
         alert('Tu mensaje se envió correctamente');
@@ -98,9 +98,9 @@ formulario.addEventListener('submit', function(e) {
     }
 });
 
-var linksMenu = document.querySelectorAll('nav ul li a');
+const linksMenu = document.querySelectorAll('nav ul li a');
 
-for (var i = 0; i < linksMenu.length; i++) {
+for (let i = 0; i < linksMenu.length; i++) {
     linksMenu[i].addEventListener('click', function() {
         document.getElementById('menu').checked = false;
     });
